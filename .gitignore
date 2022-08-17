@@ -37,3 +37,6 @@ yarn-error.log*
 dist
 
 .parcel-cache
+
+# turborepo configs
+.turbo

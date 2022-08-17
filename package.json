@@ -1,0 +1,29 @@
+{
+  "name": "@monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:utils\" \"npm:dev:blog\" \"npm:dev:dashboard\"",
+    "check": "concurrently \"npm:test:*\" \"npm:typecheck:*\" --kill-others-on-fail",
+    "dev:utils": "npm run dev -w @monorepo/utils",
+    "dev:blog": "npm run dev -w @monorepo/blog",
+    "dev:dashboard": "npm run dev -w @monorepo/dashboard",
+    "test:utils": "npm run test -w @monorepo/utils",
+    "test:blog": "npm run test -w @monorepo/blog",
+    "test:dashboard": "npm run test -w @monorepo/dashboard",
+    "typecheck:utils": "npm run typecheck -w @monorepo/utils",
+    "typecheck:blog": "npm run typecheck -w @monorepo/blog",
+    "typecheck:dashboard": "npm run typecheck -w @monorepo/dashboard"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^7.2.1"
+  }
+}

@@ -66,3 +66,9 @@ In `turbo.json`
 +     "dependsOn": ["@monorepo/utils#build"]
 +   },
 ```
+
+### Lesson 04 - The dependency graph
+
+For this we need to install [Graphviz](https://graphviz.org/download/) first. Once we have that installed, we can run `npx turbo run [pipeline to inspect] --graph=name-of-the-graph.{svg|jpg|json|pdf|png|html}` and it will generate the file you specified for you. I found this to be useful to understand how your projects depend on each other.
+
+![](images/build-deps.jpg)

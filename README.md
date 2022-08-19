@@ -72,3 +72,25 @@ In `turbo.json`
 For this we need to install [Graphviz](https://graphviz.org/download/) first. Once we have that installed, we can run `npx turbo run [pipeline to inspect] --graph=name-of-the-graph.{svg|jpg|json|pdf|png|html}` and it will generate the file you specified for you. I found this to be useful to understand how your projects depend on each other.
 
 ![](images/build-deps.jpg)
+
+### Lesson 05 - The filter command
+
+We already have a few npm scripts that are not using Turborepo, instead they are using _raw_ npm scripts, like `npm run typecheck -w @monorepo/dashboard`.
+
+In order to tell Turborepo to run just in certain projects, we need to use the `--filter` flag.
+
+[Official `--filter` documentation](https://turborepo.org/docs/core-concepts/filtering#filter-by-changed-packages)
+
+To test out the filters we will use the patch that's in `patches/lesson-05-filter-command.patch`, lets:
+
+1. `git checkout -b lesson-5` You can name your branch whatever you want.
+2. `git apply patches/lesson-05-filter-command.patch`
+3. Start filtering out
+
+- [ ] By package
+- [ ] By dependants
+- [ ] By dependencies
+- [ ] Exclude
+- [ ] Git changed packages
+
+Now, let's update the npm scripts we have in our root `package.json` file

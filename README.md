@@ -109,3 +109,17 @@ npx turbo run test --continue=true
 4. Add the `--continue=true` flag to the `npx turbo run test` command
 
 I have found this to be useful when I want to know the impact of my changes across the whole project. Given the fact that `@monorepo/utils` is a dependency of `@monorepo/dashboard` and `@monorepo/blog` it's important to know the impact of my changes not only in the `@monorepo/utils` package, but in the packages that use it.
+
+### Lesson 07 - The `force` command / Ignore cache
+
+We can bypass Turborepo's local (and remote) cache if we need to. This will run the command you specify like it was the first time you run it. I have found this useful in development mode and when I'm trying to debug something inside a package and I want to be 100% sure that I'm getting the latest version of my changes.
+
+```shell
+npx turbo run test --force
+```
+
+You can also clear your local cache by deleting the `node_modules/.cache/turbo` folder.
+
+```shell
+rm -rf node_modules/.cache/.turbo
+```

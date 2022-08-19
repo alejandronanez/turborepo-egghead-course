@@ -185,3 +185,18 @@ I've found this useful specially in CI, there I just want to see the logs of the
 ```shell
 npx turbo run build --output-logs=new-only
 ```
+
+### Lesson 10 - Remote caching
+
+So far, our cache only works locally - it lives inside `node_modules/.cache/turbo`, and that means that we can't share the cache between machines. The problem that remote caching solves is exactly that, being able to share the cache between machines.
+
+```shell
+npx turbo login
+npx turbo link
+```
+
+Let's run `npx turbo run test`, delete the turbo cache directory `rm -rf node_modules/.cache/turbo` and then let's run `npx turbo run test`, you'll see that we're getting the cached version from Turborepo's Remote Cache that's hosted on Vercel.
+
+You can even take a look at your usage in this tab in your Vercel dashboard. https://vercel.com/dashboard/usage
+
+Another way to test that remote caching is working is to use the `--remote-only` flag to ignore the local cache.

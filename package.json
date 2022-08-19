@@ -28,5 +28,9 @@
   "devDependencies": {
     "prettier": "^2.7.1",
     "turbo": "^1.4.3"
+  },
+  "volta": {
+    "node": "16.17.0",
+    "npm": "8.18.0"
   }
 }

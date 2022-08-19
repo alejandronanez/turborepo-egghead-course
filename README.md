@@ -200,3 +200,25 @@ Let's run `npx turbo run test`, delete the turbo cache directory `rm -rf node_mo
 You can even take a look at your usage in this tab in your Vercel dashboard. https://vercel.com/dashboard/usage
 
 Another way to test that remote caching is working is to use the `--remote-only` flag to ignore the local cache.
+
+### Lesson 11 - Pin node and npm versions using Volta
+
+We want to use Volta to make sure that everyone that uses this project gets the same Node and NPM versions.
+
+#### Why Volta?
+
+From their website:
+
+> With Volta, you can select a Node engine once and then stop worrying about it. You can switch between projects and stop having to manually switch between Nodes. You can install npm package binaries in your toolchain without having to periodically reinstall them or figure out why they’ve stopped working.
+
+```shell
+curl https://get.volta.sh | bash
+```
+
+Now that volta is installed, we will pin the versions for our repository.
+
+```shell
+# in the root directory
+volta pin node@lts
+volta pin npm@latest
+```

@@ -94,3 +94,18 @@ To test out the filters we will use the patch that's in `patches/lesson-05-filte
 - [ ] Git changed packages
 
 Now, let's update the npm scripts we have in our root `package.json` file
+
+### Lesson 06 - The `continue` command
+
+Turborepo will terminate the process it's running if it encounters an error, we can prevent this from happening if we pass the `--continue=true` flag to the Turborepo command we want to execute.
+
+```shell
+npx turbo run test --continue=true
+```
+
+1. Make the tests in `utils/` to fail
+2. Run `npx turbo run test`
+3. See what happens
+4. Add the `--continue=true` flag to the `npx turbo run test` command
+
+I have found this to be useful when I want to know the impact of my changes across the whole project. Given the fact that `@monorepo/utils` is a dependency of `@monorepo/dashboard` and `@monorepo/blog` it's important to know the impact of my changes not only in the `@monorepo/utils` package, but in the packages that use it.

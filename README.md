@@ -177,3 +177,11 @@ And it will give you a nice JSON output, I'd pay special attention to the `packa
   ]
 }
 ```
+
+### Lesson 09 - Reduce the noise from the logs
+
+I've found this useful specially in CI, there I just want to see the logs of the packages that have changed instead of the logs for everything. We can choose the level of detail of our logs by passing a value to the `--output-logs` flag, it could either be `full` or `new-only`
+
+```shell
+npx turbo run build --output-logs=new-only
+```

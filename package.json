@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm:dev:utils\" \"npm:dev:blog\" \"npm:dev:dashboard\"",
-    "check": "concurrently \"npm:test:*\" \"npm:typecheck:*\" --kill-others-on-fail",
+    "dev": "turbo run dev",
+    "check": "turbo run test typecheck",
     "dev:utils": "npm run dev -w @monorepo/utils",
     "dev:blog": "npm run dev -w @monorepo/blog",
     "dev:dashboard": "npm run dev -w @monorepo/dashboard",
@@ -24,7 +24,6 @@
     "libs/*"
   ],
   "devDependencies": {
-    "concurrently": "^7.2.1",
     "prettier": "^2.7.1",
     "turbo": "^1.4.3"
   }

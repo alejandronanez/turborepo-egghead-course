@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "turbo run dev",
     "check": "turbo run test typecheck",
+    "build": "turbo run build",
     "dev:utils": "turbo run dev --filter=@monorepo/utils",
     "dev:blog": "turbo run dev --filter=@monorepo/blog",
     "dev:dashboard": "turbo run dev --filter=@monorepo/dashboard",

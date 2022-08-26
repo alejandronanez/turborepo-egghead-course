@@ -31,9 +31,10 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-.turbo
 .build
 .dist
 dist
 
 .parcel-cache
+
+.turbo

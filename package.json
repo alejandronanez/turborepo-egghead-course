@@ -4,17 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm:dev:utils\" \"npm:dev:blog\" \"npm:dev:dashboard\"",
-    "check": "concurrently \"npm:test:*\" \"npm:typecheck:*\" --kill-others-on-fail",
-    "dev:utils": "npm run dev -w @monorepo/utils",
-    "dev:blog": "npm run dev -w @monorepo/blog",
-    "dev:dashboard": "npm run dev -w @monorepo/dashboard",
-    "test:utils": "npm run test -w @monorepo/utils",
-    "test:blog": "npm run test -w @monorepo/blog",
-    "test:dashboard": "npm run test -w @monorepo/dashboard",
-    "typecheck:utils": "npm run typecheck -w @monorepo/utils",
-    "typecheck:blog": "npm run typecheck -w @monorepo/blog",
-    "typecheck:dashboard": "npm run typecheck -w @monorepo/dashboard"
+    "dev": "turbo run dev",
+    "check": "turbo run test typecheck",
+    "dev:utils": "turbo run dev --filter=@monorepo/utils",
+    "dev:blog": "turbo run dev --filter=@monorepo/blog",
+    "dev:dashboard": "turbo run dev --filter=@monorepo/dashboard",
+    "test:utils": "turbo run test --filter=@monorepo/utils",
+    "test:blog": "turbo run test --filter=@monorepo/blog",
+    "test:dashboard": "turbo run test --filter=@monorepo/dashboard",
+    "typecheck:utils": "turbo run typecheck --filter=@monorepo/utils",
+    "typecheck:blog": "turbo run typecheck --filter=@monorepo/blog",
+    "typecheck:dashboard": "turbo run typecheck --filter=@monorepo/dashboard"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +24,7 @@
     "libs/*"
   ],
   "devDependencies": {
-    "concurrently": "^7.2.1"
+    "prettier": "^2.7.1",
+    "turbo": "^1.4.3"
   }
 }
